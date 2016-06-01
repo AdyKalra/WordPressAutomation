@@ -10,7 +10,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import io.appium.java_client.android.AndroidDriver;
 
 /**
- * Test Class Template - This abstract class should be extended by all Test Case
+ * Test Class Template - This abstract class should be extended by Login Helper
  * to implement Desired Capabilities and Driver
  * 
  * TODO: Currently only only Android, still need to work on iOS
