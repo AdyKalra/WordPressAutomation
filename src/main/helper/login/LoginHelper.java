@@ -4,8 +4,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import common.WPAppiumTemplate;
-import common.tests.ReadFromCSV;
-import helperPage.LoginHelperPage;
+import common.data.ReadFromCSV;
+import loginPage.page.LoginHelperPage;
 
 /**
  * Login Helper needs to be extended by all Test Classes
