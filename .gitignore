@@ -7,6 +7,9 @@
 bin/
 tmp/
 target/
+app/
+src/main/resources/com/wp/automation/csv/protected_data
+test-output/
 *.tmp
 *.bak
 *.swp
