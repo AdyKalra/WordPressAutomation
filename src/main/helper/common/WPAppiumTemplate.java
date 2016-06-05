@@ -4,9 +4,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
 /**
@@ -20,7 +20,8 @@ import io.appium.java_client.android.AndroidDriver;
  */
 public abstract class WPAppiumTemplate {
 
-	protected AndroidDriver<WebElement> driver;
+	protected static AndroidDriver<MobileElement> driver;
+	private static URL serverUrl;
 	DesiredCapabilitiesHelper dch = new DesiredCapabilitiesHelper();
 
 	/**
@@ -29,12 +30,23 @@ public abstract class WPAppiumTemplate {
 	public WPAppiumTemplate() {
 		DesiredCapabilities capabilities = dch.setupAndorid();
 		try {
-			driver = new AndroidDriver<WebElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
+			serverUrl = new URL("http://0.0.0.0:4723/wd/hub");
+			driver = new AndroidDriver<MobileElement>(serverUrl, capabilities);
+
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
 
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+	}
+
+	/**
+	 * Get Current Activity
+	 * 
+	 * @return
+	 */
+	protected String getCurrentActivity() {
+		return driver.currentActivity();
 	}
 
 }
