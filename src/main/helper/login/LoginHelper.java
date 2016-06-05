@@ -22,9 +22,11 @@ public class LoginHelper extends WPAppiumTemplate {
 
 	/**
 	 * Log in to application before any test to run
+	 * 
+	 * @throws InterruptedException
 	 */
 	@BeforeClass(alwaysRun = true)
-	public void login() {
+	public void login() throws InterruptedException {
 		loginHelperPageObject = new LoginHelperPage(driver);
 		readFromCSVObject = new ReadFromCSV();
 		// Enter User Name
@@ -33,7 +35,6 @@ public class LoginHelper extends WPAppiumTemplate {
 		loginHelperPageObject.enterPassword(readFromCSVObject.getLoginPassword());
 		// Click Sign-in
 		loginHelperPageObject.clickSignIn();
-
 	}
 
 	/**

@@ -4,9 +4,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import com.wp.automation.page.MainActivityPage;
+
+import common.ElementHelperUtils;
 import common.WPAppiumPageTemplate;
 
 public class LoginHelperPage extends WPAppiumPageTemplate {
+
+	ElementHelperUtils el = new ElementHelperUtils();
 
 	public LoginHelperPage(WebDriver driver) {
 		super(driver);
@@ -42,9 +47,17 @@ public class LoginHelperPage extends WPAppiumPageTemplate {
 
 	/**
 	 * Click Sign-In
+	 * 
+	 * @return
+	 * @throws InterruptedException
 	 */
-	public void clickSignIn() {
+	public MainActivityPage clickSignIn() throws InterruptedException {
 		signInButton.click();
+		Thread.sleep(4000);// TODO
+		return new MainActivityPage(driver);
 	}
 
+	public String getPassword() {
+		return signInButton.getText();
+	}
 }
