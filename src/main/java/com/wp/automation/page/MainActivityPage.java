@@ -15,7 +15,8 @@ public class MainActivityPage extends WPAppiumPageTemplate {
 	@FindBy(xpath = "//android.widget.TextView[@text='Switch Site']")
 	private WebElement switchSite;
 
-	public void clickSwitchSite() {
+	public ChooseSitePage clickSwitchSite() {
 		switchSite.click();
+		return new ChooseSitePage(driver);
 	}
 }
