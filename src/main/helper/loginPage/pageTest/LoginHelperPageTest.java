@@ -31,7 +31,6 @@ public class LoginHelperPageTest extends WPAppiumTemplate {
 	@Test(enabled = false)
 	public void enterPassword() {
 		loginHelperPageObject.enterPassword(readFromCSVObject.getLoginPassword());
-		System.out.println("--- " + loginHelperPageObject.getPassword());
 	}
 
 	@Test(enabled = false)
