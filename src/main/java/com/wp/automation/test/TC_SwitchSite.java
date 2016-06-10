@@ -1,4 +1,4 @@
-package com.wp.automation;
+package com.wp.automation.test;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
