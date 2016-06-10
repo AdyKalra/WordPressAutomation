@@ -18,10 +18,20 @@ public class ChooseSitePage extends WPAppiumPageTemplate {
 	@FindBy(xpath = "//android.widget.TextView[@resource-id='org.wordpress.android:id/text_domain']")
 	private WebElement siteDomain;
 
+	/**
+	 * Get Site Title
+	 * 
+	 * @return
+	 */
 	public String getSiteTitle() {
 		return siteTitle.getText();
 	}
 
+	/**
+	 * Get Site Domain Name
+	 * 
+	 * @return
+	 */
 	public String getSiteDomain() {
 		return siteDomain.getText();
 	}
