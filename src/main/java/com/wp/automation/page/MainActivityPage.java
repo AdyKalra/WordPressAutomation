@@ -15,8 +15,26 @@ public class MainActivityPage extends WPAppiumPageTemplate {
 	@FindBy(xpath = "//android.widget.TextView[@text='Switch Site']")
 	private WebElement switchSite;
 
+	@FindBy(xpath = "//android.widget.TextView[@text='View Site']")
+	private WebElement viewSite;
+
+	/**
+	 * Click Switch Site
+	 * 
+	 * @return
+	 */
 	public ChooseSitePage clickSwitchSite() {
 		switchSite.click();
 		return new ChooseSitePage(driver);
+	}
+
+	/**
+	 * Click View Site
+	 * 
+	 * @return
+	 */
+	public ViewSitePage clickViewSite() {
+		viewSite.click();
+		return new ViewSitePage(driver);
 	}
 }
