@@ -1,4 +1,4 @@
-package com.wp.automation.pageTest;
+package com.wp.automation.page;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
